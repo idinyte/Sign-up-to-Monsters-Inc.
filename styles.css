@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    --white: #f1f1f1;
+    --black: #0b0b0c;
+    --blue: #137AC9;
+    --disabled-blue: #698fac;
+    --hover-blue: #198fe9;
+    --green: #1c880e;
+    --door-width: min(100%, 80vh*(942/818));
+    --door-height: min(100%, 45vw*(818/942));
+}
+
+p{
+    font-size: 1.75rem;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("resources/images/wallpaper.jpg");
+    background-repeat: repeat;
+}
+
+.door {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 80vh;
+    width: 45vw;
+}
+
+.door img {
+    height: auto;
+    width: var(--door-width);
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#open-door {
+    height: calc(0.8785*var(--door-height));
+    width: calc(0.344*var(--door-width));
+    position: absolute;
+    left: calc(0.288*var(--door-width));
+    bottom: 0;
+    z-index: 3;
+}
+
+#behind-door {
+    height: calc(0.88*var(--door-height));
+    width: calc(0.35*var(--door-width));
+    left: calc(0.288*var(--door-width));
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--black);
+}
+
+#open-door:hover {
+    cursor: pointer;
+    transition-duration: 1.3s;
+    transform: rotateY(-20deg);
+    transform-origin: left;
+    filter: drop-shadow(25px 20px 20px rgba(136, 136, 136, 0.295)) hue-rotate(-10deg);
+}
+
+#tank{
+    z-index: 2;
+}
+
+#red-bar{
+    position: absolute;
+    background-color: rgb(160, 0, 0);
+    height: 1.4vh;
+    width: calc(0.05*var(--door-width));
+    left: calc(0.875*var(--door-width));
+    bottom: calc(0.16*var(--door-height));
+    z-index: 1;
+    transform-origin: bottom;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 90vh;
+    width: 55vw;
+}
+
+#image-container {
+    width: min(50vw, 100%);
+}
+
+#image-container>img {
+    height: auto;
+    max-height: 10vh;
+    width: auto;
+    max-width: 100%;
+}
+
+#welcome-text {
+    height: auto;
+    max-height: 80vh;
+    width: 90%;
+    background-color: var(--white);
+    border: 4px solid var(--blue);
+    border-radius: 1rem;
+}
+
+#welcome-text>p {
+    font-size: 1.5rem;
+    text-align: center;
+    overflow: auto;
+    width: 100%;
+    height: auto;
+    max-height: 25vh;
+    padding: 1rem;
+    border-bottom: dashed 2px #333;
+}
+
+fieldset {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: white;
+    border: none;
+    padding-bottom: 1rem;
+    border-radius: 0 1rem 1rem;
+    max-height: 55vh;
+}
+
+input, label {
+    display: block;
+}
+
+
+fieldset>div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow: auto;
+}
+
+fieldset>div>* {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    width: clamp(10rem, 20vw, 20rem);
+    height: min(5rem, 12vh);
+    justify-content: flex-end;
+}
+
+fieldset input {
+    height: 2rem;
+    border: 2px solid #333;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+}
+
+fieldset input:focus {
+    border: 2px solid var(--blue);
+    outline: 1px solid var(--blue);
+}
+
+fieldset input:valid {
+    border: 2px solid var(--green);
+    outline: none;
+}
+
+fieldset label {
+    font-size: 1rem;
+    color: #333;
+    overflow-y: hidden;
+}
+
+fieldset input[type="submit"]{
+    height: 2rem;
+    width: 100%;
+    background-color: var(--blue);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+}
+
+fieldset input[type="submit"]:hover{
+    background-color: var(--hover-blue);
+    cursor: pointer;
+}
+
+fieldset input[type="submit"]:disabled{
+    background-color: var(--disabled-blue);
+    cursor: default;
+}
+
+#blackout{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.685);
+}

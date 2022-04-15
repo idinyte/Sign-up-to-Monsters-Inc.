@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Project: sign-up form </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <script src="script.js" defer></script>
+    <div class='door'>
+        <img class='door-img' src='resources/images/frame.png' alt='frame'></img>
+        <img class='door-img'  id="open-door" src='resources/images/only-door.png' alt='door'></img>
+        <div id="behind-door"></div>
+        <img id="red-light" src='resources/images/red-light.png' alt='red-light'></img>
+        <div id="red-bar"> </div>
+        <img class='door-img'  id="tank" src='resources/images/tank.png' alt='tank'> </img>
+    </div>
+    <div id="blackout">    </div>
+    <div id="container">
+        <div id="image-container"><img src="resources/images/title.png" alt="Monsters Inc"> </img></div>
+        <div id="welcome-text">
+            <p>Welcome applicant #<span id="random-number"></span>. In order to send your application, you must first
+                prove yourself worthy by scaring your first child. Best of luck! </p>
+            <form action="#" onsubmit="return validateForm()">
+                <fieldset id="fieldset" disabled>
+                    <div>
+
+                        <div>
+                            <label for="fname">FIRST NAME</label>
+                            <input type="text" id="fname" name="fname" minlength="3" maxlength="30" placeholder="Scary" required>
+                        </div>
+                        <div>
+                            <label for="fname">LAST NAME</label>
+                            <input type="text" id="lname" name="lname" minlength="3" maxlength="50" placeholder="Monster" required>
+                        </div>
+                        <div>
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" placeholder="scarymonster@gmail.com" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                        </div>
+                        <div>
+                            <label for="phone">PHONE</label>
+                            <input type="text" id="lname" name="lname" title="123-123-1234" pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"  placeholder="123-123-1234" required>
+                        </div>
+
+                        <div>
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password" minlength="7" title="must contain a number, uppercase and lowercase" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]+)$" name="password" onChange="onChange()" required>
+                        </div>
+                        <div>
+                            <label for="confirmpassword">CONFIRM PASSWORD</label>
+                            <input type="password" id="confirmpassword" minlength="7" name="confirmpassword" onChange="onChange()" required>
+                        </div>
+                        <div>
+                            <input type="submit" value="Sign up">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
