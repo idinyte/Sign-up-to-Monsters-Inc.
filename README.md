@@ -2,4 +2,4 @@ This project is a part of [The Odin Project](https://www.theodinproject.com) cur
 
 The goal was to practice making forms and strengten my frontend skills.
 
-Check out the project [here](https://idinyte.github.io/)
+Check out the project [here](https://idinyte.github.io/Sign-up-to-Monsters-Inc./)
